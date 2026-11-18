@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study Hub - Hindi and English learning resources for Classes 9 to 12.">
+  <title>Study Hub | Learn • Practice • Succeed</title>
+  <style>
+    :root{--blue:#2457d6;--navy:#14213d;--pale:#eef4ff;--ink:#202b3c;--muted:#667085;--white:#fff;--line:#e6eaf2}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fd;color:var(--ink);line-height:1.6}
+    a{text-decoration:none;color:inherit}.container{width:min(1100px,92%);margin:auto}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .logo{font-size:1.45rem;font-weight:800;color:var(--blue);letter-spacing:-.5px}
+    .logo span{color:var(--navy)}
+    nav{display:flex;align-items:center;gap:22px;color:#475467;font-weight:600;font-size:.95rem}
+    nav a:hover{color:var(--blue)}.lang{border:1px solid var(--line);background:white;border-radius:9px;padding:9px 12px;font-weight:700;color:var(--blue);cursor:pointer}
+    .hero{padding:76px 0 66px;background:linear-gradient(125deg,#edf3ff,#f9fbff 60%,#e9f8ff)}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:35px}
+    .tag{display:inline-block;background:#dce8ff;color:#1746b5;border-radius:30px;padding:6px 13px;font-weight:700;font-size:.83rem}
+    h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.12;color:var(--navy);margin:18px 0}
+    h1 span{color:var(--blue)}.hero p{font-size:1.1rem;color:#536178;max-width:610px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .btn{display:inline-block;padding:12px 19px;border-radius:10px;font-weight:700;border:1px solid var(--blue);cursor:pointer}
+    .primary{background:var(--blue);color:white}.secondary{background:white;color:var(--blue)}
+    .hero-card{background:white;border:1px solid #e1e9fa;border-radius:22px;padding:26px;box-shadow:0 18px 45px #294b8b16}
+    .hero-card .cap{font-size:3.5rem}.hero-card h3{margin:8px 0;color:var(--navy)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+    .stat{background:var(--pale);padding:12px;border-radius:12px;text-align:center}
+    .stat b{display:block;color:var(--blue);font-size:1.3rem}.stat small{color:var(--muted)}
+    section{padding:58px 0}.section-head{text-align:center;margin-bottom:28px}
+    .section-head h2{font-size:2rem;color:var(--navy);margin:0 0 7px}.section-head p{color:var(--muted);margin:0}
+    .tools{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:22px 0 26px}
+    input,select{padding:12px 14px;border:1px solid #d9dfeb;border-radius:10px;background:white;font-size:1rem;min-width:190px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid var(--line);border-radius:16px;padding:21px;transition:.2s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #172b4d12}
+    .emoji{font-size:2rem}.card h3{margin:8px 0 4px;color:var(--navy)}
+    .card p{color:var(--muted);margin:0 0 13px}.pill{display:inline-block;background:#edf2ff;color:#234db5;border-radius:20px;padding:4px 10px;font-size:.78rem;font-weight:700}
+    .card button{margin-top:14px;background:#fff;border:1px solid var(--blue);color:var(--blue);border-radius:8px;padding:9px 12px;font-weight:700;cursor:pointer}
+    .notice{background:#14213d;color:white;border-radius:18px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .notice h2{margin:0 0 5px}.notice p{margin:0;color:#d5deef}
+    .notice a{background:white;color:#14213d;padding:10px 15px;border-radius:9px;font-weight:700;white-space:nowrap}
+    footer{background:#101a2e;color:#d5deef;padding:30px 0;text-align:center}
+    footer strong{color:white}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:25px}
+    @media(max-width:760px){nav{gap:12px;font-size:.85rem}.hero-grid{grid-template-columns:1fr}.hero{padding:55px 0}.hero-card{max-width:440px}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.nav{height:auto;min-height:66px;flex-wrap:wrap;padding:12px 0}nav{order:3;width:100%;justify-content:space-between}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}.notice{align-items:flex-start;flex-direction:column}input,select{width:100%}.tools{display:grid}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">Study <span>Hub</span> 📘</a>
+    <nav><a href="#home" data-en="Home" data-hi="होम">Home</a><a href="#classes" data-en="Classes" data-hi="कक्षाएँ">Classes</a><a href="#subjects" data-en="Subjects" data-hi="विषय">Subjects</a><a href="#about" data-en="About" data-hi="हमारे बारे में">About</a></nav>
+    <button class="lang" id="langBtn" type="button">हिंदी</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag" data-en="YOUR LEARNING PARTNER · CLASS 9–12" data-hi="आपका पढ़ाई का साथी · कक्षा 9–12">YOUR LEARNING PARTNER · CLASS 9–12</span>
+        <h1 data-en="Learn better.<br><span>Achieve more.</span>" data-hi="बेहतर सीखें।<br><span>आगे बढ़ें।</span>">Learn better.<br><span>Achieve more.</span></h1>
+        <p data-en="Clear notes, useful practice and learning resources for students of Classes 9 to 12 — in Hindi and English." data-hi="कक्षा 9 से 12 तक के विद्यार्थियों के लिए आसान नोट्स, अभ्यास और पढ़ाई की सामग्री — हिंदी और अंग्रेज़ी में।">Clear notes, useful practice and learning resources for students of Classes 9 to 12 — in Hindi and English.</p>
+        <div class="actions"><a class="btn primary" href="#subjects" data-en="Explore Subjects" data-hi="विषय देखें">Explore Subjects</a><a class="btn secondary" href="#classes" data-en="Choose Class" data-hi="कक्षा चुनें">Choose Class</a></div>
+      </div>
+      <div class="hero-card">
+        <div class="cap">🎓</div><h3 data-en="Your study space" data-hi="आपकी पढ़ाई की जगह">Your study space</h3>
+        <p data-en="Study at your pace, revise smartly and keep moving towards your goals." data-hi="अपनी गति से पढ़ें, अच्छे से दोहराएँ और अपने लक्ष्य की ओर बढ़ते रहें।">Study at your pace, revise smartly and keep moving towards your goals.</p>
+        <div class="stats"><div class="stat"><b>4</b><small data-en="Classes" data-hi="कक्षाएँ">Classes</small></div><div class="stat"><b>6+</b><small data-en="Subjects" data-hi="विषय">Subjects</small></div><div class="stat"><b>2</b><small data-en="Languages" data-hi="भाषाएँ">Languages</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <div class="container">
+      <div class="section-head"><h2 data-en="Choose your class" data-hi="अपनी कक्षा चुनें">Choose your class</h2><p data-en="Find learning material for your current class." data-hi="अपनी कक्षा के लिए पढ़ाई की सामग्री चुनें।">Find learning material for your current class.</p></div>
+      <div class="tools"><select id="classSelect" aria-label="Choose class"><option value="all">All Classes / सभी कक्षाएँ</option><option value="9">Class 9</option><option value="10">Class 10</option><option value="11">Class 11</option><option value="12">Class 12</option></select><input id="search" type="search" placeholder="Search subjects / विषय खोजें..." aria-label="Search subjects"></div>
+    </div>
+  </section>
+
+  <section id="subjects" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2 data-en="Explore subjects" data-hi="विषय देखें">Explore subjects</h2><p data-en="Start with a subject and build your understanding step by step." data-hi="किसी विषय से शुरुआत करें और धीरे-धीरे अपनी समझ बढ़ाएँ।">Start with a subject and build your understanding step by step.</p></div>
+      <div class="grid" id="subjectGrid">
+        <article class="card" data-subject="mathematics maths गणित" data-classes="9,10,11,12"><div class="emoji">📐</div><span class="pill">Class 9–12</span><h3>Mathematics / गणित</h3><p data-en="Formulas, examples and practice questions." data-hi="सूत्र, उदाहरण और अभ्यास के प्रश्न।">Formulas, examples and practice questions.</p><button onclick="showInfo('Mathematics')">Explore / देखें</button></article>
+        <article class="card" data-subject="science विज्ञान" data-classes="9,10"><div class="emoji">🔬</div><span class="pill">Class 9–10</span><h3>Science / विज्ञान</h3><p data-en="Understand important concepts with simple explanations." data-hi="आसान भाषा में महत्वपूर्ण अवधारणाएँ समझें।">Understand important concepts with simple explanations.</p><button onclick="showInfo('Science')">Explore / देखें</button></article>
+        <article class="card" data-subject="physics भौतिक विज्ञान" data-classes="11,12"><div class="emoji">⚡</div><span class="pill">Class 11–12</span><h3>Physics / भौतिक विज्ञान</h3><p data-en="Concepts, laws, numericals and revision notes." data-hi="अवधारणाएँ, नियम, संख्यात्मक प्रश्न और नोट्स।">Concepts, laws, numericals and revision notes.</p><button onclick="showInfo('Physics')">Explore / देखें</button></article>
+        <article class="card" data-subject="chemistry रसायन विज्ञान" data-classes="11,12"><div class="emoji">🧪</div><span class="pill">Class 11–12</span><h3>Chemistry / रसायन विज्ञान</h3><p data-en="Learn reactions, equations and key concepts." data-hi="अभिक्रियाएँ, समीकरण और मुख्य अवधारणाएँ सीखें।">Learn reactions, equations and key concepts.</p><button onclick="showInfo('Chemistry')">Explore / देखें</button></article>
+        <article class="card" data-subject="biology जीव विज्ञान" data-classes="9,10,11,12"><div class="emoji">🧬</div><span class="pill">Class 9–12</span><h3>Biology / जीव विज्ञान</h3><p data-en="Diagrams, definitions and topic-wise notes." data-hi="चित्र, परिभाषाएँ और विषयवार नोट्स।">Diagrams, definitions and topic-wise notes.</p><button onclick="showInfo('Biology')">Explore / देखें</button></article>
+        <article class="card" data-subject="english अंग्रेज़ी" data-classes="9,10,11,12"><div class="emoji">📖</div><span class="pill">Class 9–12</span><h3>English / अंग्रेज़ी</h3><p data-en="Grammar, writing skills and literature support." data-hi="व्याकरण, लेखन कौशल और साहित्य की मदद।">Grammar, writing skills and literature support.</p><button onclick="showInfo('English')">Explore / देखें</button></article>
+      </div>
+      <p id="noResults" class="empty" hidden>No subjects found. / कोई विषय नहीं मिला।</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container"><div class="notice"><div><h2 data-en="Small steps. Big goals." data-hi="छोटे कदम। बड़े लक्ष्य।">Small steps. Big goals.</h2><p data-en="Study Hub is made to make learning simple and accessible." data-hi="Study Hub का उद्देश्य पढ़ाई को आसान और सुलभ बनाना है।">Study Hub is made to make learning simple and accessible.</p></div><a href="#home" data-en="Back to top ↑" data-hi="ऊपर जाएँ ↑">Back to top ↑</a></div></div>
+  </section>
+</main>
+<footer><div class="container"><strong>Study Hub 📘</strong><br><span data-en="Learn • Practice • Succeed" data-hi="सीखें • अभ्यास करें • सफल बनें">Learn • Practice • Succeed</span><br><small>© <span id="year"></span> Study Hub. Made for learners.</small></div></footer>
+
+<script>
+  let hindi = false;
+  const langBtn = document.getElementById('langBtn');
+  langBtn.addEventListener('click', () => {
+    hindi = !hindi;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.innerHTML = hindi ? el.dataset.hi : el.dataset.en;
+    });
+    langBtn.textContent = hindi ? 'English' : 'हिंदी';
+  });
+  const classSelect = document.getElementById('classSelect');
+  const search = document.getElementById('search');
+  const cards = [...document.querySelectorAll('.card')];
+  function filterCards(){
+    const chosen = classSelect.value;
+    const term = search.value.trim().toLowerCase();
+    let count = 0;
+    cards.forEach(card => {
+      const matchesClass = chosen === 'all' || card.dataset.classes.split(',').includes(chosen);
+      const matchesText = card.dataset.subject.includes(term);
+      card.hidden = !(matchesClass && matchesText);
+      if (!card.hidden) count++;
+    });
+    document.getElementById('noResults').hidden = count !== 0;
+  }
+  classSelect.addEventListener('change', filterCards);
+  search.addEventListener('input', filterCards);
+  function showInfo(subject){
+    alert(subject + ' resources are being prepared. Add your chapter notes, PDFs and lessons here!');
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
